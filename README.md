@@ -60,3 +60,8 @@ The agent detects a CrashLoopBackOff pod and returns:
 - Slack alerts integration
 - Automated remediation
 - Streamlit dashboard
+
+## Screenshots
+
+### Grafana Monitoring Dashboard
+![Grafana Dashboard](grafana-dashboard.png)
