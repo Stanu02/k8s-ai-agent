@@ -65,3 +65,11 @@ The agent detects a CrashLoopBackOff pod and returns:
 
 ### Grafana Monitoring Dashboard
 ![Grafana Dashboard](grafana-dashboard.png)
+
+## Screenshots
+
+### Grafana Monitoring Dashboard
+![Grafana Dashboard](Dashboard-grafana.png)
+
+### Kubernetes Dashboard
+![Kubernetes Dashboard](dashboard-K.png)
