@@ -1,66 +1,62 @@
 # Kubernetes AI Troubleshooting Agent
 
-## Overview
-
-An AI-powered Kubernetes troubleshooting agent that automatically detects unhealthy pods, collects diagnostic information, and uses Google Gemini to provide root cause analysis and recommended fixes.
+An AI-powered Kubernetes agent that automatically detects unhealthy pods and uses Google Gemini to diagnose root causes and recommend fixes.
 
 ## Features
+- Detects unhealthy/crashing pods automatically
+- Collects pod logs, events, and exit codes
+- Uses Google Gemini AI for root cause analysis
+- Recommends fixes like a Senior SRE
 
-* Detect unhealthy Kubernetes pods
-* Collect Kubernetes events
-* Collect pod logs
-* Collect container exit codes
-* Collect container commands and arguments
-* Generate AI-powered root cause analysis
-* Recommend remediation steps
+## Tech Stack
+- **Python** - Agent logic
+- **Kubernetes** - Container orchestration (k3d)
+- **Google Gemini AI** - Pod diagnosis
+- **Docker** - Containerization
+- **ArgoCD** - GitOps continuous deployment
+- **Prometheus + Grafana** - Cluster monitoring
+- **Terraform** - Infrastructure as code
+- **Azure VM** - Cloud hosting
 
 ## Architecture
-
-Kubernetes Cluster
+Azure VM
 ↓
-Python Agent
+k3d Kubernetes Cluster
+↓
+ArgoCD (GitOps deployment)
+↓
+Python AI Agent
 ↓
 Collect Events + Logs + Exit Codes
 ↓
-Google Gemini
+Google Gemini AI
 ↓
-Root Cause Analysis
-
-## Tech Stack
-
-* Python
-* Kubernetes
-* Minikube
-* Google Gemini
-* Docker
+Root Cause Analysis + Fix Recommendations
 
 ## Setup
 
-Install dependencies:
-
+1. Install dependencies:
+```bash
 pip install -r requirements.txt
+```
 
-Configure environment variables:
-
-Create a `.env` file:
-
+2. Create `.env` file:
 GEMINI_API_KEY=your_api_key
 
-Run:
-
+3. Run:
+```bash
 python agent.py
+```
 
-## Example Use Cases
-
-* CrashLoopBackOff
-* ImagePullBackOff
-* Container startup failures
-* Kubernetes troubleshooting automation
+## Example Output
+The agent detects a CrashLoopBackOff pod and returns:
+- Issue Type
+- Root Cause
+- Impact
+- Recommended Fix
 
 ## Future Improvements
-
-* Multi-namespace support
-* Slack integration
-* Streamlit dashboard
-* Automated remediation
-* Prometheus integration
+- Multi-namespace support
+- Slack alerts integration
+- Automated remediation
+- Streamlit dashboard
